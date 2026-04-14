@@ -28,7 +28,30 @@
             </p>
             <div class="button">
                 <button id="accept" class="btn one">Accept</button>
+                <button id="settings" class="btn two">Settings</button>
             </div>
+        </dialog>
+        <dialog id="settings-dialog">
+            <h2>Settings</h2>
+            <div class="settings-options">
+                <div class="setting-item">
+                    <label>Browser</label>
+                    <input type="checkbox" id="browser-cookie" checked>
+                </div>
+                <div class="setting-item">
+                    <label>Operating system</label>
+                    <input type="checkbox" id="os-cookie" checked>
+                </div>
+                <div class="setting-item">
+                    <label>Screen width</label>
+                    <input type="checkbox" id="screen-width-cookie" checked>
+                </div>
+                <div class="setting-item">
+                    <label>Screen height</label>
+                    <input type="checkbox" id="screen-height-cookie" checked>
+                </div>
+            </div>
+            <button id="save-settings" class="btn save">Save preferences</button>
         </dialog>
     </body>
 </html>
