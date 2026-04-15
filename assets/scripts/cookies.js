@@ -53,3 +53,30 @@ function acceptAllCookies() {
 
     askDialog.close();
 }
+
+function savePreferences() {
+    if (document.getElementById('browser-cookie').checked)
+        setCookie('browser', getBrowserName());
+
+    if (document.getElementById('os-cookie').checked)
+        setCookie('os', getOSName());
+
+    if (document.getElementById('screen-width-cookie').checked)
+        setCookie('screenWidth', screen.width);
+
+    if (document.getElementById('screen-height-cookie').checked)
+        setCookie('screenHeight', screen.height);
+
+    setCookie('cookieConsent', 'true');
+
+    settingsDialog.close();
+}
+
+acceptBtn.addEventListener('click', acceptAllCookies);
+
+settingsBtn.addEventListener('click', () => {
+    askDialog.close();
+    settingsDialog.showModal();
+});
+
+saveBtn.addEventListener('click', savePreferences);
