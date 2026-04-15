@@ -6,8 +6,6 @@ const acceptBtn = document.getElementById('accept');
 const settingsBtn = document.getElementById('settings');
 const saveBtn =document.getElementById('save-settings');
 
-const LIFETIME = 20;
-
 function setCookie(name, value, seconds = 20) {
     document.cookie = `${name}=${value}; max-age=${seconds}; path=/`;
 };
