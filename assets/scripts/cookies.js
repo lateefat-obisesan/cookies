@@ -24,3 +24,32 @@ const getCookie = (name) => {
     }
     return null;
 };
+
+function getBrowserName() {
+    const ua = navigator.userAgent;
+    if (ua.includes('Chrome')) return 'Chrome';
+    if (ua.includes('Firefox')) return 'Firefox';
+    if (ua.includes('Safari')) return 'Safari';
+    if (ua.includes('Edge')) return 'Edge';
+
+    return 'Unknown';
+}
+
+function getOSName() {
+    const platform = navigator.platform;
+    if (platform.includes('Win')) return 'Windows';
+    if (platform.includes('Mac')) return 'MacOS';
+    if (platform.includes('Linux')) return 'Linux';
+
+    return 'Unknown';
+}
+
+function acceptAllCookies() {
+    setCookie('browser', getBrowserName());
+    setCookie('os', getOSName());
+    setCookie('screenWidth', screen.width);
+    setCookie('screenHeight', screen.height); 
+    setCookie('cookieConsent', 'true');
+
+    askDialog.close();
+}
