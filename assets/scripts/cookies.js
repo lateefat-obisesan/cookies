@@ -80,3 +80,13 @@ settingsBtn.addEventListener('click', () => {
 });
 
 saveBtn.addEventListener('click', savePreferences);
+
+window.addEventListener('load', () => {
+    if (!navigator.cookieEnabled) return;
+
+    if (!getCookie('cookieConsent')) {
+        setTimeout(() => {
+            askDialog.showModal();
+        }, 1200);
+    }
+});
