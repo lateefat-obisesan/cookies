@@ -22,7 +22,7 @@ dialog {
     padding: 25px;
     background-color: #fff;
     color: #333;
-    width: 500px; 
+    width: 400px; 
     margin: auto;
 }
 
@@ -37,11 +37,15 @@ dialog::backdrop {
 }
 
 .btn {
-    padding: 12px 24px;
+    padding: 10px 30px;
     cursor: pointer;
     border-radius: 4px;
     font-weight: bold;
     border: none;
+}
+
+h2{
+    text-align: center;
 }
 
 .one, .save {
@@ -50,9 +54,8 @@ dialog::backdrop {
 }
 
 .two {
-    background-color: white;
-    color: #007bff;
-    border: 1px solid #007bff;
+    background-color: #007bff;
+    color: white; 
 }
 
 .setting-item {
@@ -73,7 +76,7 @@ input[type="checkbox"] {
 }
 
 input[type="checkbox"]:checked {
-    background-color: #6f42c1;
+    background-color: #007bff;
 }
 
 input[type="checkbox"]::after {
