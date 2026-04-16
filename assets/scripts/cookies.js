@@ -59,7 +59,7 @@ function savePreferences() {
     const widthChecked = document.getElementById('screen-width-cookie').checked;
     const heightChecked = document.getElementById('screen-height-cookie').checked;
 
-   if (browserChecked) {
+    if (browserChecked) {
         setCookie('browser', getBrowserName());
     } else {
         setCookie('browser', 'rejected'); 
