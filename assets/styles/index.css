@@ -36,6 +36,10 @@ dialog::backdrop {
     backdrop-filter: blur(4px);
 }
 
+h2{
+    text-align: center;
+}
+
 .button {
     display: flex;
     gap: 15px;
@@ -43,15 +47,13 @@ dialog::backdrop {
 }
 
 .btn {
-    padding: 10px 30px;
+    flex: 1; 
+    padding: 12px;
     cursor: pointer;
-    border-radius: 4px;
-    font-weight: bold;
+    border-radius: 6px;
+    font-weight: 600;
     border: none;
-}
-
-h2{
-    text-align: center;
+    transition: 0.3s;
 }
 
 .one, .save {
@@ -68,12 +70,13 @@ h2{
     display: flex;
     justify-content: space-between;
     align-items: center;
-    margin-bottom: 15px;
+    margin-bottom: 20px;
+    padding: 5px 0;
 }
 
 input[type="checkbox"] {
-    width: 40px;
-    height: 20px;
+    width: 44px;
+    height: 22px;
     appearance: none; /*Required to hide the square box */
     background-color: #ccc;
     border-radius: 20px;
@@ -88,8 +91,8 @@ input[type="checkbox"]:checked {
 input[type="checkbox"]::after {
     content: '';
     position: absolute;
-    width: 16px;
-    height: 16px;
+    width: 18px;
+    height: 18px;
     background: #fff;
     border-radius: 50%;
     top: 2px;
