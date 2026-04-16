@@ -18,16 +18,22 @@ main p {
 
 dialog {
     border: none;
-    border-radius: 8px;
-    padding: 25px;
+    border-radius: 12px;
+    padding: 40px;
     background-color: #fff;
     color: #333;
-    width: 400px; 
+    width: 90%; 
+    max-width: 450px;
     margin: auto;
+}
+
+dialog:focus {
+    outline: none; /* Remove the black border when it opens */
 }
 
 dialog::backdrop {
     background-color: rgba(0, 0, 0, 0.7);
+    backdrop-filter: blur(4px);
 }
 
 .button {
