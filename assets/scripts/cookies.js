@@ -7,7 +7,7 @@ const settingsBtn = document.getElementById('settings');
 const saveBtn =document.getElementById('save-settings');
 const LIFETIME = 20;
 
-function setCookie(name, value, seconds = 20) {
+function setCookie(name, value, seconds = LIFETIME) {
     document.cookie = `${name}=${value}; max-age=${seconds}; path=/`;
 };
 
@@ -18,7 +18,7 @@ const getCookie = (name) => {
         const trimmedCookie = cookie.trim();
         const [key, value] = trimmedCookie.split('=');
         if (decodeURIComponent(key) === name) {
-                return decodeURIComponent(value);
+            return decodeURIComponent(value);
         }
     }
     return null;
@@ -48,25 +48,46 @@ function acceptAllCookies() {
     setCookie('os', getOSName());
     setCookie('screenWidth', screen.width);
     setCookie('screenHeight', screen.height); 
-    setCookie('cookieConsent', 'true');
+     setCookie('cookieConsent', 'accepted');
 
     askDialog.close();
 }
 
 function savePreferences() {
-    if (document.getElementById('browser-cookie').checked)
+    const browserChecked = document.getElementById('browser-cookie').checked;
+    const osChecked = document.getElementById('os-cookie').checked;
+    const widthChecked = document.getElementById('screen-width-cookie').checked;
+    const heightChecked = document.getElementById('screen-height-cookie').checked;
+
+   if (browserChecked) {
         setCookie('browser', getBrowserName());
+    } else {
+        setCookie('browser', 'rejected'); 
+    }
 
-    if (document.getElementById('os-cookie').checked)
+    if (osChecked) {
         setCookie('os', getOSName());
+    } else {
+        setCookie('os', 'rejected');
+    }
 
-    if (document.getElementById('screen-width-cookie').checked)
+    if (widthChecked) {
         setCookie('screenWidth', screen.width);
+    } else {
+        setCookie('screenWidth', 'rejected');
+    }
 
-    if (document.getElementById('screen-height-cookie').checked)
+    if (heightChecked) {
         setCookie('screenHeight', screen.height);
+    } else {
+        setCookie('screenHeight', 'rejected');
+    }
 
-    setCookie('cookieConsent', 'true');
+    if (browserChecked || osChecked || widthChecked || heightChecked) {
+        setCookie('cookieConsent', 'accepted');
+    } else {
+        setCookie('cookieConsent', 'rejected');
+    }
 
     settingsDialog.close();
 }
